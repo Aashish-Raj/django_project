@@ -1,0 +1,53 @@
+{% extends "main_body.html" %}
+
+{% block content %}
+
+<!-- form code -->
+
+<form class="container" method="post" action="">
+    {% csrf_token %}
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="fname" placeholder="First name" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="lname" placeholder="Last name" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="contact" placeholder="contact" required>
+    </div>
+
+   
+    <div class="form-group">
+        <input type="text" class="form-control" name="h_no" placeholder="House Number" required>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="city" placeholder="city" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="state" placeholder="State" required>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="country" placeholder="country" required>
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Enter password" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "main_body.html" %}
+
+{% block content %}
+
+<!-- table code -->
+
+<table class="container-fluid table table-striped  my-5">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">email</th>
+      <th scope="col">contact</th>
+      <!-- <th scope="col">address</th> -->
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in context %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.fname}}</td>
+      <td>{{i.lname}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.contact}}</td>
+      <!-- <td>{{i.address}}</td> -->
+      <td><a href="update/{{i.id}}">Edit</a></td>
+      <td><a class="btn btn-danger" href="delete/{{i.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+   
+  </tbody>
+</table>
+
+<!-- paginator code -->
+
+<nav aria-label="...">
+  <ul class="pagination">
+
+    <!-- for previous page -->
+
+    {% if context.has_previous %}
+
+    <li class="page-item ">
+      <a class="page-link" href="/show_data?page=1" tabindex="-1">First</a>
+    </li>
+
+    <li class="page-item ">
+      <a class="page-link" href="?page={{context.previous_page_number}}" tabindex="-1">Previous</a>
+    </li>
+
+    {% endif %}
+
+
+
+    <li class="page-item">
+      <a class="page-link" href="?page=1">1</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" href="?page=2">2</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" href="?page=3">3</a>
+    </li>
+
+    <!-- <li class="page-item ">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+
+    <!-- for next page -->
+    {% if context.has_next %}
+
+    <li class="page-item">
+      <a class="page-link" href="?page={{context.next_page_number}}">Next</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="?page={{context.paginator.num_pages}}">Last</a>
+    </li>
+
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+
+{% endblock %}

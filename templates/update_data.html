@@ -1,0 +1,47 @@
+{% extends "main_body.html" %}
+
+{% block content %}
+
+<!-- form code -->
+
+<form class="container" method="POST" action="">
+    {% csrf_token %}
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{user_details.email}}">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="fname" value="{{user_details.fname}}">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="lname" value="{{user_details.lname}}">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="contact" value="{{user_details.contact}}">
+    </div>
+    
+    <div class="form-group">
+        <input type="text" class="form-control" name="h_no" value="{{address_details.house_no}}">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="city" value="{{address_details.city}}">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="state" value="{{address_details.state}}">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="country" value="{{address_details.Country}}">
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+  
+
+  
+{% endblock %}

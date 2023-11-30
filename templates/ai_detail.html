@@ -1,0 +1,27 @@
+{% extends "main_body.html" %}
+
+{% block content %}
+
+<!-- form code -->
+    <form class="container" method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            
+        
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="model_name" placeholder="model_name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="secret_key" placeholder="secret_key" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock %}
